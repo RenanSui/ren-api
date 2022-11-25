@@ -10,8 +10,6 @@ export default async function handler(
 		params as keyof typeof services
 	);
 
-	const dynamicDate = new Date()
-
 	try {
 		const { data } = await axios.get(URL);
 		res.setHeader('Cache-Control', 's-maxage=10, stale-while-revalidate');
@@ -24,8 +22,6 @@ export default async function handler(
 		});
 	}
 }
-
-// https://api.weatherapi.com/v1/current.json?key=871c9c1d464b4ae0a6615335222103&q=amogus&aqi=no
 
 const services = {
 	weather: function (place: string) {
