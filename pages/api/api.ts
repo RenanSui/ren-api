@@ -16,7 +16,6 @@ export default async function handler(
 		const { data } = await axios.get(URL);
 		res.setHeader('Cache-Control', 's-maxage=10, stale-while-revalidate');
 		res.status(200).json({
-			dynamicDate: dynamicDate.toUTCString(),
 			data: data,
 		});
 	} catch (error: any) {
